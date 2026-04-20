@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.actividad9.PrimaryController">
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.poli.actividad9.PrimaryController">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+
+      <Label fx:id="primaryLabel" text="¡Hola desde Primary!"
+             style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #19d1ce;" />
+
+      <HBox alignment="CENTER" spacing="10.0">
+         <Button text="Color Rojo"   onAction="#cambiarColorRojo"
+                 style="-fx-background-color: #e74c3c; -fx-text-fill: white;" />
+         <Button text="Color Verde"  onAction="#cambiarColorVerde"
+                 style="-fx-background-color: #2ecc71; -fx-text-fill: white;" />
+         <Button text="Color Azul"   onAction="#cambiarColorAzul"
+                 style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+      </HBox>
+
+      <Button text="Cambiar Texto" onAction="#cambiarTexto"
+              style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-pref-width: 150px;" />
+
+      <Button text="Aumentar Fuente" onAction="#aumentarFuente"
+              style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-pref-width: 150px;" />
+
+      <Button text="Resetear" onAction="#resetear"
+              style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-pref-width: 150px;" />
+
+      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Cambiar Ventana"
+              style="-fx-background-color: #19d1ce; -fx-text-fill: white; -fx-pref-width: 150px;">
+         <effect>
+            <ColorAdjust brightness="-0.24" contrast="0.13" hue="0.03" saturation="0.4" />
+         </effect>
+      </Button>
+
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
