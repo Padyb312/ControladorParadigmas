@@ -55,7 +55,7 @@ public class ControladorPrincipal {
 
     @FXML
     void abrirEliminar(ActionEvent event) {
-        abrirVentana("/co/edu/poli/actividad9/VentanaEliminar.fxml", "Eliminar Traje");
+        abrirVentana("/co/edu/poli/actividad9/ventanaEliminar.fxml", "Eliminar Traje");
     }
 
     @FXML
