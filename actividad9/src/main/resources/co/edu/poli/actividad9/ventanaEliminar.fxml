@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="197.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="140.0" prefWidth="280.0"
+    style="-fx-background-color: #E0E0D6;"
+    fx:controller="co.edu.poli.mvc.controlador.ControladorEliminar"
+    xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField layoutX="27.0" layoutY="46.0" promptText="codigo" />
-      <Button layoutX="73.0" layoutY="88.0" mnemonicParsing="false" text="Eliminar" />
+
+      <Label layoutX="14.0" layoutY="20.0" text="Numero Traje"/>
+      <TextField fx:id="campoCodigo"
+                 layoutX="130.0" layoutY="16.0"
+                 promptText="Ej: T-001"/>
+
+      <Button layoutX="65.0" layoutY="65.0"
+              prefWidth="150.0" prefHeight="35.0"
+              style="-fx-background-color: #FF4444; -fx-text-fill: white;"
+              text="Eliminar"
+              onAction="#eliminar"/>
+
    </children>
 </AnchorPane>

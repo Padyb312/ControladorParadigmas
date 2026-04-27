@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
-
-
-<AnchorPane id="menuPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E0E0D6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="420.0" prefWidth="620.0"
+    style="-fx-background-color: #E0E0D6;"
+    fx:controller="co.edu.poli.mvc.controlador.ControladorPrincipal"
+    xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextArea layoutX="184.0" layoutY="32.0" prefHeight="274.0" prefWidth="385.0" />
-      <Button id="crear" layoutX="34.0" layoutY="66.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #2DA9D2;" text="Crear" />
-      <Button id="mostarTodos" layoutX="34.0" layoutY="100.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #2DA9D2;" text="Mostar Todos" />
-      <Button id="mostarUno" layoutX="34.0" layoutY="134.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #2DA9D2;" text="Mostar Uno" />
-      <Button id="modificar" layoutX="34.0" layoutY="166.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #00D111;" text="Modificar" />
-      <Button id="eliminar" layoutX="34.0" layoutY="201.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #FF0000;" text="Eliminar" />
-      <Button id="cargar" layoutX="34.0" layoutY="327.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #9BD4D4;" text="Cargar" />
-      <Button id="guardar" layoutX="420.0" layoutY="327.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #9BD4D4;" text="Guardar" />
+
+      <!-- Título -->
+      <Label layoutX="184.0" layoutY="10.0" prefWidth="385.0"
+             text="Sistema de Gestión de Trajes Espaciales"
+             style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-alignment: center;"/>
+
+      <!-- Área de resultados -->
+      <TextArea fx:id="textArea"
+                layoutX="184.0" layoutY="40.0"
+                prefHeight="310.0" prefWidth="420.0"
+                editable="false"
+                promptText="Los resultados aparecerán aquí..."/>
+
+      <!-- Botones CRUD -->
+      <Label layoutX="14.0" layoutY="50.0"
+             text="── CRUD ──"
+             style="-fx-font-weight: bold;"/>
+
+      <Button layoutX="14.0" layoutY="75.0"
+              prefHeight="32.0" prefWidth="155.0"
+              style="-fx-background-color: #2DA9D2; -fx-text-fill: white;"
+              text="➕  Crear Traje"
+              onAction="#abrirCrear"/>
+
+      <Button layoutX="14.0" layoutY="115.0"
+              prefHeight="32.0" prefWidth="155.0"
+              style="-fx-background-color: #2DA9D2; -fx-text-fill: white;"
+              text="🔍  Buscar Traje"
+              onAction="#abrirBuscar"/>
+
+      <Button layoutX="14.0" layoutY="155.0"
+              prefHeight="32.0" prefWidth="155.0"
+              style="-fx-background-color: #2DA9D2; -fx-text-fill: white;"
+              text="📋  Mostrar Todos"
+              onAction="#mostrarTodos"/>
+
+      <Button layoutX="14.0" layoutY="195.0"
+              prefHeight="32.0" prefWidth="155.0"
+              style="-fx-background-color: #00D111; -fx-text-fill: white;"
+              text="✏️  Modificar Traje"
+              onAction="#abrirModificar"/>
+
+      <Button layoutX="14.0" layoutY="235.0"
+              prefHeight="32.0" prefWidth="155.0"
+              style="-fx-background-color: #FF4444; -fx-text-fill: white;"
+              text="🗑️  Eliminar Traje"
+              onAction="#abrirEliminar"/>
+
+      <!-- Separador -->
+      <Label layoutX="14.0" layoutY="285.0"
+             text="── Archivo ──"
+             style="-fx-font-weight: bold;"/>
+
+      <Button layoutX="14.0" layoutY="310.0"
+              prefHeight="32.0" prefWidth="155.0"
+              style="-fx-background-color: #9BD4D4;"
+              text="💾  Guardar (Serializar)"
+              onAction="#guardar"/>
+
+      <Button layoutX="14.0" layoutY="350.0"
+              prefHeight="32.0" prefWidth="155.0"
+              style="-fx-background-color: #9BD4D4;"
+              text="📂  Cargar (Deserializar)"
+              onAction="#cargar"/>
+
+      <!-- Botón limpiar pantalla -->
+      <Button layoutX="184.0" layoutY="365.0"
+              prefHeight="28.0" prefWidth="420.0"
+              style="-fx-background-color: #CCCCCC;"
+              text="Limpiar pantalla"
+              onAction="#limpiar"/>
+
    </children>
 </AnchorPane>
